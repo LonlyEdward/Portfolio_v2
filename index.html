@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lonly Edward | Portfolio v2</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%239d50bb%22>L</text></svg>"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="boot-screen" class="boot-screen">
+      <div class="boot-content">
+        <h1 class="glitch">SYSTEM ONLINE</h1>
+        <p>Welcome to Lonly Edward's Terminal [v2.0.26]</p>
+        <p class="status-text">Location: University of Dodoma, TZ</p>
+        <button onclick="startSystem()" class="boot-btn">
+          AUTHORIZE ACCESS
+        </button>
+      </div>
+    </div>
+
+    <div class="stars"></div>
+    <div class="nebula"></div>
+
+    <main class="console hidden" id="main-interface">
+      <header class="terminal-header">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+        <p>lonly_edward@udom.cive: ~/</p>
+      </header>
+
+      <section id="chat-log" class="chat-log"></section>
+
+      <footer class="input-area">
+        <div class="controls">
+          <button onclick="ask('about')">BIOGRAPHY</button>
+          <button onclick="ask('projects')">PROJECTS</button>
+          <button onclick="ask('fun')">FUN SECTION</button>
+          <button onclick="ask('contact')">COMMS CHANNELS</button>
+        </div>
+      </footer>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
