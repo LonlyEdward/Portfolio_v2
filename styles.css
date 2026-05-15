@@ -85,12 +85,13 @@ body {
 }
 
 .chat-log {
-  flex-grow: 1;
-  padding: 20px;
-  overflow-y: auto;
   display: flex;
   flex-direction: column;
   gap: 15px;
+  padding: 20px;
+  padding-bottom: 100px;
+  overflow-y: auto;
+  flex-grow: 1;
 }
 
 .message {
@@ -256,6 +257,7 @@ button:hover {
   .chat-log {
     padding: 10px;
     font-size: 0.85em;
+    padding-bottom: 150px; /* Extra room for phone users */
   }
 
   .controls {
