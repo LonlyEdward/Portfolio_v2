@@ -49,7 +49,7 @@ const responses = {
   },
 
   contact:
-    "Establishing communication bridge... <br><br> [CONNECT_VIA_GITHUB] <br> <a href='https://github.com/LonlyEdward' class='contact-link' target='_blank'>github.com/lonly-edward</a> <br><br> [CONNECT_VIA_LINKEDIN] <br> <a href='https://www.linkedin.com/in/lonly-edward/' class='contact-link' target='_blank'>linkedin.com/in/lonly-edward</a> <br><br> [INTERNAL_LOOP] <br> <a href='#' class='contact-link' onclick='alert(\"Target reached. Redundant connection detected.\"); return false;'>local.portfolio.host</a>",
+    "Establishing communication bridge... <br><br> [CONNECT_VIA_GITHUB] <br> <a href='https://github.com/LonlyEdward' class='contact-link' target='_blank'>github.com/lonly-edward</a> <br><br> [CONNECT_VIA_LINKEDIN] <br> <a href='https://www.linkedin.com/in/lonly-edward/' class='contact-link' target='_blank'>linkedin.com/in/lonly-edward</a> <br><br> [INTERNAL_LOOP] <br> <a href='#' class='contact-link' onclick='alert(\"Where you going Mate? This is it innit!.\"); return false;'>local.portfolio.host</a>",
 };
 
 function ask(topic, shouldScroll = true) {
