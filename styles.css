@@ -11,11 +11,12 @@ body {
   color: var(--text-color);
   font-family: "Courier New", Courier, monospace;
   margin: 0;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
-  overflow: hidden;
+  align-items: flex-start;
+  padding: 20px 0;
+  overflow-y: auto;
 }
 
 .stars {
@@ -51,13 +52,15 @@ body {
 .console {
   width: 90%;
   max-width: 800px;
-  height: 80vh;
+  min-height: 80vh;
+  height: auto;
   background: rgba(15, 15, 30, 0.85);
   border: 1px solid var(--neon-purple);
   box-shadow: 0 0 20px rgba(157, 80, 187, 0.3);
   border-radius: 8px;
   display: flex;
   flex-direction: column;
+  margin-bottom: 50px;
 }
 
 .terminal-header {
@@ -85,13 +88,12 @@ body {
 }
 
 .chat-log {
+  flex-grow: 1;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 15px;
-  padding: 20px;
-  padding-bottom: 100px;
-  overflow-y: auto;
-  flex-grow: 1;
+  overflow: visible;
 }
 
 .message {
@@ -248,16 +250,21 @@ button:hover {
 }
 
 @media (max-width: 600px) {
+  body {
+    padding: 10px 0;
+  }
+
   .console {
     height: 90vh;
     width: 95%;
     margin-top: 20px;
+    margin-bottom: 100px;
   }
 
   .chat-log {
     padding: 10px;
     font-size: 0.85em;
-    padding-bottom: 150px; /* Extra room for phone users */
+    /* padding-bottom: 150px; */
   }
 
   .controls {

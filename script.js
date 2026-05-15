@@ -3,11 +3,13 @@ const chatLog = document.getElementById("chat-log");
 function startSystem() {
   const boot = document.getElementById("boot-screen");
   const main = document.getElementById("main-interface");
+
   boot.classList.add("fade-out");
   setTimeout(() => {
     boot.classList.add("hidden");
     main.classList.remove("hidden");
-    ask("about");
+
+    ask("about", false);
   }, 800);
 }
 
@@ -50,7 +52,7 @@ const responses = {
     "Establishing communication bridge... <br><br> [CONNECT_VIA_GITHUB] <br> <a href='https://github.com/LonlyEdward' class='contact-link' target='_blank'>github.com/lonly-edward</a> <br><br> [CONNECT_VIA_LINKEDIN] <br> <a href='https://www.linkedin.com/in/lonly-edward/' class='contact-link' target='_blank'>linkedin.com/in/lonly-edward</a> <br><br> [INTERNAL_LOOP] <br> <a href='#' class='contact-link' onclick='alert(\"Target reached. Redundant connection detected.\"); return false;'>local.portfolio.host</a>",
 };
 
-function ask(topic) {
+function ask(topic, shouldScroll = true) {
   const userMsg = document.createElement("div");
   userMsg.className = "message user-msg";
   userMsg.innerHTML = `<p>> EXECUTE ${topic.toUpperCase()}</p>`;
@@ -68,9 +70,11 @@ function ask(topic) {
     sysMsg.innerHTML = `<p>${content}</p>`;
     chatLog.appendChild(sysMsg);
 
-    chatLog.scrollTop = chatLog.scrollHeight;
-    setTimeout(() => {
-      chatLog.scrollTop = chatLog.scrollHeight;
-    }, 50);
+    if (shouldScroll) {
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: "smooth",
+      });
+    }
   }, 500);
 }
