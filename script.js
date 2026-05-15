@@ -36,10 +36,10 @@ const spaceFacts = [
 
 const responses = {
   about:
-    "Identification: Lonly Edward. Current Status: 2nd Year Computer Science student at the University of Dodoma. I enjoy learning about tech and building new things, specifically within the realms of full stack development and Cybersecurity. I spend my time exploring the tech space and securing digital orbits.",
+    "Identification: Lonly Edward. <br>Current Status: 2nd Year Computer Science student at the University of Dodoma. I enjoy learning about tech and building new things specifically within the realms of full stack development and Cybersecurity. I spend my time exploring the tech space and securing digital orbits.",
 
   projects:
-    "Scanning active project sectors... <br><br> 1. RoastMeMate: A simple website that generates roasts(from a template obviously) with a click of a button. <br> <a href='https://lonlyedward.github.io/RoastMeMate/' class='contact-link' target='_blank'>ACCESS LIVE HOST</a> <br><br> 2. PFMS: A simple personal finance management web application made by using django and react. <br> <a href='https://github.com/LonlyEdward/PFMS' class='contact-link' target='_blank'>ACCESS GITHUB</a>",
+    "Scanning active project sectors... <br><br> 1. RoastMeMate: A simple website that generates roasts(from a template obviously) with a click of a button. <br> <a href='https://lonlyedward.github.io/RoastMeMate/' class='contact-link' target='_blank'>ACCESS LIVE HOST</a> <br><br> 2. PFMS: A personal finance management web application built with Django and React. <br> <a href='https://github.com/LonlyEdward/PFMS' class='contact-link' target='_blank'>ACCESS GITHUB</a>",
 
   fun: () => {
     const fact = spaceFacts[Math.floor(Math.random() * spaceFacts.length)];
@@ -59,12 +59,18 @@ function ask(topic) {
   setTimeout(() => {
     const sysMsg = document.createElement("div");
     sysMsg.className = "message system";
+
     const content =
       typeof responses[topic] === "function"
         ? responses[topic]()
         : responses[topic];
+
     sysMsg.innerHTML = `<p>${content}</p>`;
     chatLog.appendChild(sysMsg);
+
     chatLog.scrollTop = chatLog.scrollHeight;
+    setTimeout(() => {
+      chatLog.scrollTop = chatLog.scrollHeight;
+    }, 50);
   }, 500);
 }

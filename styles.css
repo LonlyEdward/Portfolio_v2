@@ -245,3 +245,34 @@ button:hover {
 .contact-link::before {
   content: ">> ";
 }
+
+@media (max-width: 600px) {
+  .console {
+    height: 90vh;
+    width: 95%;
+    margin-top: 20px;
+  }
+
+  .chat-log {
+    padding: 10px;
+    font-size: 0.85em;
+  }
+
+  .controls {
+    grid-template-columns: 1fr 1fr;
+    padding: 10px;
+    gap: 8px;
+  }
+
+  button {
+    padding: 8px;
+    font-size: 0.8em;
+  }
+}
+
+.contact-link {
+  display: block;
+  width: fit-content;
+  word-break: break-all;
+  margin-bottom: 10px;
+}
